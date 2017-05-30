@@ -1,7 +1,7 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import TodoList from './TodoList/index';
+import * as React from 'react';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import HelloWorld from './HelloWorld';
+import TodoList from './TodoList/index';
 
 export default () => (
   <Router>

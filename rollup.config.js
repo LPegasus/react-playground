@@ -5,7 +5,7 @@ import ts from 'rollup-plugin-typescript2';
 import uglify from 'rollup-plugin-uglify';
 import serve from 'rollup-plugin-serve';
 import replace from 'rollup-plugin-replace';
-import { minify } from 'uglify-js-harmony';
+import { minify } from 'uglify-js';
 import less from 'rollup-plugin-less';
 import livereload from 'rollup-plugin-livereload'
 
@@ -14,12 +14,12 @@ const env = process.env.NODE_ENV;
 const config = {
   entry: './src/entry/index.tsx',
   format: 'umd',
-  dest: 'dist/index.js',
+  dest: 'dist_r/index.js',
   sourceMap: true,
   plugins: [
     less({
       insert: false,   // insert css to <head/>
-      output: './dist/styles.css'
+      output: './dist_r/styles.css'
     }),
     cjs(),
     ts({

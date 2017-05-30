@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-react"
+  ],
+  "lintOptions": {
+    "typeCheck": true
+  },
+  "rules": {
+    "no-unused-expression": true,
+    "no-duplicate-variable": true,
+    "no-duplicate-key": true,
+    "no-unused-variable": true,
+    "curly": true,
+    "class-name": true,
+    "triple-equals": true,
+    "quotemark": [true, "jsx-double", "single"],
+    "no-console": [true, "log"]
+  }
+}
