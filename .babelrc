@@ -1,5 +1,6 @@
 {
   "presets": [
+<<<<<<< Updated upstream
     "es2015",
     "react",
     "stage-0"
@@ -25,3 +26,32 @@
   ],
   "sourceMaps": "inline"
 }
+=======
+    [
+      "env",
+      {
+        "targets": {
+          "chrome": 49,
+          "safari": 10,
+          "edge": 12,
+          "ie": 10,
+          "firefox": 42
+        },
+        "debug": true,
+        "uglify": true,
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": true // or 'css'
+      }
+    ]
+  ]
+}
+>>>>>>> Stashed changes

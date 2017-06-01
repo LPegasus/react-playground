@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
-    // "allowJs": true,
+    "allowJs": true,
     "target": "es6",
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
-    "jsxFactory": "React.createElement",
-    "module": "commonjs",
-    // "noResolve": false,
+    "module": "es6",
+    "noResolve": true,
     "importHelpers": true,
     // "outDir": "./dist",
     "moduleResolution": "node",
@@ -14,7 +13,7 @@
     "strictNullChecks": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "downlevelIteration": true
+    "diagnostics": true
   },
   "include": [
     "src/**/*",

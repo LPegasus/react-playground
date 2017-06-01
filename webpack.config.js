@@ -30,36 +30,20 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: "source-map-loader"
+      },
+      {
+        enforce: 'pre',
+        test: /\.tsx?$/,
+        use: "source-map-loader"
+      },
+      {
         test: /\.tsx$/,
         use: [
-          {
-            loader: 'awesome-typescript-loader',
-            options: {
-              transpileOnly: true,
-              useBabel: true,
-              useCache: true
-            }
-          },
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['es2015', 'react', 'stage-0'],
-              plugins: [
-                'add-module-exports',
-                [
-                  'transform-runtime', {
-                    "helpers": true,
-                    "polyfill": true,
-                    "regenerator": true,
-                    "moduleName": "babel-runtime"
-                  }], [
-                  'babel-plugin-import', {
-                    "libraryName": "antd",
-                    "style": true
-                  }
-                ]]
-            }
-          }
+          'awesome-typescript-loader',
+          'babel-loader',
         ],
         include: [
           path.resolve(__dirname, 'src')
@@ -78,11 +62,11 @@ module.exports = {
   performance: {
     hints: 'warning'
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   devServer: {
     compress: true, // enable gzip compression
     historyApiFallback: false, // true for index.html upon 404, object for multiple paths
-    hot: true, // hot module replacement. Depends on HotModuleReplacementPlugin
+    hot: false, // hot module replacement. Depends on HotModuleReplacementPlugin
     watchOptions: {
       ignored: /node_modules/,
       poll: 1000
@@ -90,14 +74,15 @@ module.exports = {
     port: 8080
   },
 
-  watch: true,
+  watch: false,
 
   plugins: [
     new ExtractTextPlugin({
       filename: '[name].css'
     }),
     commonsChunkPlugin,
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin()
     // uglifyJSPlugin
   ]
 };
