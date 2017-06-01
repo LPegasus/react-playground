@@ -1,0 +1,27 @@
+{
+  "presets": [
+    "es2015",
+    "react",
+    "stage-0"
+  ],
+  "plugins": [
+    "add-module-exports",
+    [
+      "transform-runtime",
+      {
+        "helpers": true,
+        "polyfill": true,
+        "regenerator": true,
+        "moduleName": "babel-runtime"
+      }
+    ],
+    [
+      "babel-plugin-import",
+      {
+        "libraryName": "antd",
+        "style": true
+      }
+    ]
+  ],
+  "sourceMaps": "inline"
+}

@@ -33,25 +33,32 @@ module.exports = {
         test: /\.tsx$/,
         use: [
           {
-            loader: 'babel-loader',
+            loader: 'awesome-typescript-loader',
             options: {
-              presets: ['es2015', 'react'],
-              plugins: [[
-                'transform-runtime',  {
-                  "helpers": true,
-                  "polyfill": true,
-                  "regenerator": true,
-                  "moduleName": "babel-runtime"
-                }], [
-                'import', {
-                  "libraryName": "antd",
-                  "style": true
-                }
-              ]]
+              transpileOnly: true,
+              useBabel: true,
+              useCache: true
             }
           },
           {
-            loader: 'awesome-typescript-loader'
+            loader: 'babel-loader',
+            options: {
+              presets: ['es2015', 'react', 'stage-0'],
+              plugins: [
+                'add-module-exports',
+                [
+                  'transform-runtime', {
+                    "helpers": true,
+                    "polyfill": true,
+                    "regenerator": true,
+                    "moduleName": "babel-runtime"
+                  }], [
+                  'babel-plugin-import', {
+                    "libraryName": "antd",
+                    "style": true
+                  }
+                ]]
+            }
           }
         ],
         include: [

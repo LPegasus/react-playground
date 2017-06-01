@@ -10,10 +10,11 @@
     "importHelpers": true,
     // "outDir": "./dist",
     "moduleResolution": "node",
-    "declaration": true,
+    "declaration": false,
     "strictNullChecks": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "downlevelIteration": true
   },
   "include": [
     "src/**/*",

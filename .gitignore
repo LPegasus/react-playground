@@ -23,3 +23,5 @@ npm-debug.log*
 .vscode
 dist_w/
 dist_r/
+.awcache
+*.d.ts
