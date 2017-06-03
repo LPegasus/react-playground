@@ -42,8 +42,8 @@ module.exports = {
       {
         test: /\.tsx$/,
         use: [
-          'awesome-typescript-loader',
           'babel-loader',
+          'awesome-typescript-loader',
         ],
         include: [
           path.resolve(__dirname, 'src')

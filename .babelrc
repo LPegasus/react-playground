@@ -1,32 +1,5 @@
 {
   "presets": [
-<<<<<<< Updated upstream
-    "es2015",
-    "react",
-    "stage-0"
-  ],
-  "plugins": [
-    "add-module-exports",
-    [
-      "transform-runtime",
-      {
-        "helpers": true,
-        "polyfill": true,
-        "regenerator": true,
-        "moduleName": "babel-runtime"
-      }
-    ],
-    [
-      "babel-plugin-import",
-      {
-        "libraryName": "antd",
-        "style": true
-      }
-    ]
-  ],
-  "sourceMaps": "inline"
-}
-=======
     [
       "env",
       {
@@ -39,7 +12,8 @@
         },
         "debug": true,
         "uglify": true,
-        "modules": false
+        "modules": false,
+        "useBuiltIns": true
       }
     ]
   ],
@@ -54,4 +28,3 @@
     ]
   ]
 }
->>>>>>> Stashed changes

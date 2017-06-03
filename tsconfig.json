@@ -1,24 +1,18 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "target": "es6",
-    "allowSyntheticDefaultImports": true,
-    "jsx": "react",
-    "module": "es6",
-    "noResolve": true,
-    "importHelpers": true,
-    // "outDir": "./dist",
     "moduleResolution": "node",
+    "jsx": "react",
+    "allowSyntheticDefaultImports":true,
+    "target": "es6",
+    "module": "es6",
+    "allowJs": true,
     "declaration": false,
     "strictNullChecks": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "diagnostics": true
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "diagnostics": true,
+    "importHelpers": true
   },
-  "include": [
-    "src/**/*",
-    "test/**/*"
-  ],
   "exclude": [
     "node_modules"
   ]
